@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_name %}
+    Вход в аккаунт
+{% endblock page_name %}
+
+{% block search-bar %}
+
+{% endblock search-bar %}
+
+{% block content %}
+
+    {% include 'partials/social_login.html'%}
+
+    <h2>Войти в аккаунт</h2>
+    <form method="POST" action="{% url 'users:login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Войти</button>
+    
+    </form>
+
+{% endblock content %}

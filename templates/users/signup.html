@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_name %}
+    Регистрация
+{% endblock page_name %}
+
+{% block search-bar %}
+
+{% endblock search-bar %}
+
+{% block content %}
+
+    {% include 'partials/social_login.html'%}
+
+    <h2>Регистрация</h2>
+    <form method="POST" action="{% url 'users:signup' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Создать аккаунт</button>
+    
+    </form>
+
+{% endblock content %}
